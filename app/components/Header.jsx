@@ -97,7 +97,7 @@ export default function Header() {
             <Image
               src={Menu}
               alt="Menu"
-              className="cursor-pointer w-[32px] block"
+              className="cursor-pointer w-[32px] block lg:hidden"
             />
           </div>
         </div>
