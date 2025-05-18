@@ -546,7 +546,7 @@ export default function Footer() {
               ]}
             />
           </div>
-          <p className="text-gray-500 mx-4.5 text-xs pt-5 md:pt-2.5 pb-5 inline-block sm:border-b-2 sm:border-gray-300">
+          <p className="text-gray-500 mx-4.5 text-xs pt-5 md:pt-2.5 pb-5 inline-block md:border-b-2 sm:border-gray-300">
             More ways to shop:{" "}
             <Link
               href="#"
@@ -563,17 +563,17 @@ export default function Footer() {
             </Link>{" "}
             near you. Or call 1-800-MY-APPLE.
           </p>
-          <p className="text-xs text-gray-700 block mx-4.5 sm:hidden">
+          <p className="text-xs text-gray-700 block mx-4.5 md:hidden">
             United States
           </p>
 
           <div className="flex flex-row justify-between py-5 px-4.5">
-            <div className="flex flex-col sm:flex-row">
+            <div className="flex flex-col md:flex-row">
               <p className="text-xs text-gray-500 pr-5">
                 Copyright © 2024 Apple Inc. All rights reserved.
               </p>
-              <div className="flex flex-wrap">
-                <p className="text-xs border-r-[1px] px-2.5 text-gray-700 border-gray-500 cursor-pointer">
+              <div className="flex flex-wrap sm:flex-nowrap">
+                <p className="text-xs border-r-[1px] pr-2.5 text-gray-700 border-gray-500 cursor-pointer">
                   Privacy Policy
                 </p>
                 <p className="text-xs border-r-[1px] px-2.5 text-gray-700 border-gray-500 cursor-pointer">
@@ -590,7 +590,7 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="text-xs text-gray-700 hidden sm:block">
+            <p className="text-xs text-gray-700 hidden md:block">
               United States
             </p>
           </div>
