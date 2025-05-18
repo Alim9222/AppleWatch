@@ -1,6 +1,47 @@
+"use client";
 import apple from "@/app/assets/icons/apple.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const AccordionItem = ({ title, items }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-gray-300 py-2">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center text-sm font-medium cursor-pointer"
+      >
+        <span>{title}</span>
+        <svg
+          className={`w-4 h-4 transform transition-transform duration-300 ${
+            open ? "rotate-180" : "rotate-0"
+          }`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="pl-4 pt-2 pb-2 flex flex-col gap-1">
+          {items.map((item, idx) => (
+            <p key={idx} className="text-xs text-gray-500">
+              {item}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Footer() {
   return (
@@ -297,13 +338,13 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8 md:flex flex-col hidden">
+        <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8 flex flex-col">
           <div className="px-4.5">
             <div className="py-2  flex flex-row items-center">
               <Image className="w-9 h-10" src={apple} alt="apple" />
               <p className="text-xs text-gray-500">Watch</p>
             </div>
-            <div className="flex flex-row gap-14 pb-5">
+            <div className="md:flex flex-row gap-14 pb-5 hidden">
               <div className="flex flex-col">
                 <p className="text-xs font-bold pb-1">Shop and Learn</p>
                 <p className="text-xs pb-1 text-gray-500">Store</p>
@@ -420,7 +461,92 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <p className="text-gray-500 mx-4.5 text-xs pt-2.5 pb-5 inline-block border-b-2 border-gray-300">
+          <div className="w-full bg-[#f0f1f4] text-black px-5 flex flex-col md:hidden">
+            <AccordionItem
+              title="Shop and Learn"
+              items={[
+                "Store",
+                "Mac",
+                "iPad",
+                "iPhone",
+                "Watch",
+                "Vision",
+                "AirPods",
+                "TV & Home",
+                "AirTag",
+                "Accessories",
+                "Gift Cards",
+              ]}
+            />
+            <AccordionItem
+              title="Apple Wallet"
+              items={["Wallet", "Apple Card", "Apple Pay", "Apple Cash"]}
+            />
+            <AccordionItem
+              title="Account"
+              items={[
+                "Manage Your Apple ID",
+                "Apple Store Account",
+                "iCloud.com",
+              ]}
+            />
+            <AccordionItem
+              title="Entertainment"
+              items={[
+                "Apple One",
+                "Apple TV+",
+                "Apple Music",
+                "Apple Arcade",
+                "Apple Fitness+",
+                "Apple News+",
+                "Apple Podcasts",
+                "Apple Books",
+                "App Store",
+              ]}
+            />
+            <AccordionItem
+              title="Apple Store"
+              items={[
+                "Find a Store",
+                "Genius Bar",
+                "Today at Apple",
+                "Group Reservations",
+                "Apple Camp",
+                "Apple Store App",
+                "Certified Refurbished",
+                "Apple Trade In",
+                "Financing",
+                "Carrier Deals at Apple",
+                "Order Status",
+                "Shopping Help",
+              ]}
+            />
+            <AccordionItem
+              title="Apple Values"
+              items={[
+                "Accessibility",
+                "Education",
+                "Environment",
+                "Inclusion and Diversity",
+                "Privacy",
+                "Racial Equity and Justice",
+                "Supply Chain",
+              ]}
+            />
+            <AccordionItem
+              title="About Apple"
+              items={[
+                "Newsroom",
+                "Apple Leadership",
+                "Career Opportunities",
+                "Investors",
+                "Ethics & Compliance",
+                "Events",
+                "Contact Apple",
+              ]}
+            />
+          </div>
+          <p className="text-gray-500 mx-4.5 text-xs pt-5 md:pt-2.5 pb-5 inline-block sm:border-b-2 sm:border-gray-300">
             More ways to shop:{" "}
             <Link
               href="#"
@@ -437,12 +563,16 @@ export default function Footer() {
             </Link>{" "}
             near you. Or call 1-800-MY-APPLE.
           </p>
+          <p className="text-xs text-gray-700 block mx-4.5 sm:hidden">
+            United States
+          </p>
+
           <div className="flex flex-row justify-between py-5 px-4.5">
-            <div className="flex flex-row">
+            <div className="flex flex-col sm:flex-row">
               <p className="text-xs text-gray-500 pr-5">
                 Copyright © 2024 Apple Inc. All rights reserved.
               </p>
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <p className="text-xs border-r-[1px] px-2.5 text-gray-700 border-gray-500 cursor-pointer">
                   Privacy Policy
                 </p>
@@ -460,7 +590,9 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-            <p className="text-xs text-gray-700">United States</p>
+            <p className="text-xs text-gray-700 hidden sm:block">
+              United States
+            </p>
           </div>
         </div>
       </div>
