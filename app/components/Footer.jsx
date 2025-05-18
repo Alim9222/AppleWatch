@@ -297,7 +297,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8 flex flex-col">
+        <div className="mx-auto max-w-[1120px] px-4 sm:px-6 lg:px-8 md:flex flex-col hidden">
           <div className="px-4.5">
             <div className="py-2  flex flex-row items-center">
               <Image className="w-9 h-10" src={apple} alt="apple" />
