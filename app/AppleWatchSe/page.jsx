@@ -395,7 +395,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <h1 className="text-5xl font-bold text-center pb-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center pb-10">
           Which Apple Watch is right for you?
         </h1>
         <div className="max-w-[1348px] mx-auto flex px-0 sm:px-[5%] overflow-x-auto xl:overflow-x-hidden">
