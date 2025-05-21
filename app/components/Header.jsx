@@ -85,7 +85,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative bg-gray-50">
       {/* Header bar */}
       <div className="flex flex-row max-w-5xl mx-auto items-center justify-between px-3.5">
         <Image src={apple} alt="apple" />

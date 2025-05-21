@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Icon from "@/app/assets/icons/Icon.svg";
+import Link from "next/link";
+import AppleWatchSe from "../AppleWatchSe/page";
 
 export default function WatchCard({
   image,
@@ -29,7 +31,12 @@ export default function WatchCard({
         <button className="text-gray-200 bg-blue-600 py-2.5 px-4 rounded-full mr-2.5 cursor-pointer">
           Learn more
         </button>
-        <p className="text-blue-600 pr-1 cursor-pointer">Buy</p>
+        <Link
+          href="/AppleWatchSe"
+          className="text-blue-600 pr-1 cursor-pointer"
+        >
+          Buy
+        </Link>
         <Image src={Icon} alt="Icon" className="cursor-pointer" />
       </div>
 
