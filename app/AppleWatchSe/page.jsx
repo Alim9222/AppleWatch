@@ -242,7 +242,7 @@ export default function Page() {
             </button>
           </div>
         </div>
-        <div className="w-full flex flex-col gap-[15px] sm:gap-[20px] md:gap-[25px] mx-auto">
+        <div className="w-full flex flex-col gap-[15px] sm:gap-[20px] md:gap-[25px] mx-auto px-[15px] sm:px-[20px] md:px-[25px]">
           <div className="relative inline-block mx-auto">
             <Image src={CarbonN} alt="CarbonN" className="" />
             <button className=" absolute top-[65%] left-1/35 w-fit px-3 py-2 text-xs md:px-4 md:py-2.5 md:text-[14px] lg:px-5 lg:text-[17px] lg:py-3 rounded-full text-black bg-green-500 cursor-pointer mx-auto">
